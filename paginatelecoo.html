@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Unidad 3 - Fundamentos de Telecomunicaciones</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 900px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #003366;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        .highlight {
+            background-color: #e8f4fc;
+            padding: 10px;
+            border-left: 5px solid #1e88e5;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #004080;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Unidad 3: Técnicas de Modulación</h1>
+    <p>Fundamentos de Telecomunicaciones</p>
+</header>
+
+<section>
+    <h2>Objetivos de la Unidad</h2>
+    <ul>
+        <li>Comprender cómo se transmite la información por medios eléctricos y electromagnéticos.</li>
+        <li>Distinguir entre las distintas técnicas de modulación analógica y digital.</li>
+        <li>Aprender a convertir señales entre formatos analógicos y digitales.</li>
+        <li>Identificar los principales códigos de línea utilizados en la transmisión de datos.</li>
+        <li>Conocer el papel de los módems, los estándares de comunicación y los protocolos de red.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>3.1 Técnicas de Modulación Analógica</h2>
+    <p>Las técnicas de modulación analógica permiten transmitir señales analógicas a través de medios físicos modulando una señal portadora. Se utilizan principalmente en radio y televisión.</p>
+    
+    <div class="highlight">
+        <strong>Modulación en Amplitud (AM):</strong> La amplitud de la señal portadora varía según la señal de información. Es sencilla pero sensible al ruido.
+    </div>
+
+    <div class="highlight">
+        <strong>Modulación en Frecuencia (FM):</strong> Se modifica la frecuencia de la portadora. Es más resistente al ruido que AM, usada en radio FM.
+    </div>
+
+    <div class="highlight">
+        <strong>Modulación en Fase (PM):</strong> Cambia la fase de la portadora para transmitir la información. Más compleja, se usa combinada con otras técnicas.
+    </div>
+
+    <p><strong>Codec:</strong> (Codificador-Decodificador). Convierte señales analógicas en digitales y viceversa. Se usa en telefonía, videollamadas, música y más.</p>
+</section>
+
+<section>
+    <h2>3.2 Técnicas de Modulación Digital</h2>
+    <p>Permiten enviar información digital a través de medios físicos. Existen tres tipos de conversión:</p>
+
+    <h3>Conversión Digital a Digital</h3>
+    <p>Transforma bits en formas adecuadas para transmisión física:</p>
+    <ul>
+        <li><strong>Unipolar:</strong> Solo utiliza voltajes positivos. Simple, pero poco eficiente.</li>
+        <li><strong>Polar:</strong> Utiliza voltajes positivos y negativos. Mejora el reconocimiento de señales.</li>
+        <li><strong>Bipolar:</strong> Usa tres niveles: positivo, cero y negativo. Alterna polaridad para evitar errores.</li>
+    </ul>
+
+    <h3>Conversión Analógica a Digital</h3>
+    <p>Convierte una señal analógica (como voz) en bits digitales:</p>
+    <ul>
+        <li><strong>Muestreo:</strong> Toma muestras de la señal a intervalos regulares (ej: 8000 veces por segundo).</li>
+        <li><strong>Cuantización:</strong> Asigna un valor numérico a cada muestra según su nivel.</li>
+        <li><strong>Codificación:</strong> Convierte esos valores en códigos binarios.</li>
+    </ul>
+    <p><strong>PAM:</strong> Modula la amplitud de los pulsos según la señal analógica.<br>
+    <strong>PCM:</strong> Codifica los pulsos en binario. Es la técnica más usada en telefonía digital.</p>
+
+    <h3>Conversión Digital a Analógico</h3>
+    <p>Usada para enviar datos digitales a través de una portadora analógica, como en los módems:</p>
+    <ul>
+        <li><strong>ASK (Amplitud):</strong> Varia la amplitud de la señal según los bits.</li>
+        <li><strong>FSK (Frecuencia):</strong> Cambia la frecuencia de acuerdo a los datos.</li>
+        <li><strong>PSK (Fase):</strong> Modifica la fase de la portadora para representar bits.</li>
+        <li><strong>QAM:</strong> Combina amplitud y fase para transmitir más datos por símbolo.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>3.4 Códigos de Línea</h2>
+    <p>Se utilizan para codificar datos digitales antes de su transmisión para evitar errores, facilitar la sincronización y mejorar la eficiencia:</p>
+    <ul>
+        <li><strong>RZ (Retorno a Cero):</strong> Cada bit vuelve a cero en medio del tiempo. Mejora sincronización, pero consume más ancho de banda.</li>
+        <li><strong>NRZ (No Retorno a Cero):</strong> Mantiene el nivel durante todo el bit. Más simple pero con problemas de sincronización.</li>
+        <li><strong>AMI:</strong> Los bits '1' alternan polaridad. Mejora la detección de errores.</li>
+        <li><strong>Pseudoternario:</strong> Similar a AMI, pero alterna los '0'.</li>
+        <li><strong>Manchester:</strong> Cada bit tiene una transición en la mitad. Ideal para sincronización.</li>
+        <li><strong>Manchester Diferencial:</strong> El valor depende del cambio o no de señal.</li>
+        <li><strong>B8ZS y HDB3:</strong> Sustituyen secuencias largas de ceros para mantener sincronía y evitar pérdida de señal.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>3.5 Módem, Estándares y Protocolos</h2>
+    <p><strong>Módem:</strong> Dispositivo que convierte señales digitales a analógicas (y viceversa) para permitir la comunicación entre computadoras y redes telefónicas. Por ejemplo, el ADSL o los módems 4G.</p>
+
+    <p><strong>Estándares:</strong> Son normas técnicas para garantizar compatibilidad entre dispositivos. Algunos ejemplos:</p>
+    <ul>
+        <li><strong>V.92:</strong> Estándar para módems telefónicos.</li>
+        <li><strong>ADSL:</strong> Línea de abonado digital asimétrica.</li>
+        <li><strong>LTE:</strong> Evolución de la red móvil 4G.</li>
+    </ul>
+
+    <p><strong>Protocolos:</strong> Reglas para comunicar dispositivos. Ejemplos:</p>
+    <ul>
+        <li><strong>TCP/IP:</strong> Base de internet.</li>
+        <li><strong>HTTP:</strong> Para páginas web.</li>
+        <li><strong>FTP:</strong> Para transferencia de archivos.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Actividades</h2>
+    <ol>
+        <li>Cree un tutorial (página web, video, presentación) explicando con sus propias palabras los tipos de modulación.</li>
+        <li>Observe los videos de apoyo en Moodle y escriba una reflexión o aporte sobre lo aprendido.</li>
+        <li>Suba su producto final (enlace o archivo) a la plataforma Moodle.</li>
+    </ol>
+</section>
+
+<footer>
+    <p><strong>Elaborado por:</strong> LIC. MARÍA SILVIA GARCÍA MONTERROSAS</p>
+</footer>
+
+</body>
+</html>
